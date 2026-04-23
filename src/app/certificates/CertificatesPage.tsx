@@ -12,7 +12,7 @@ export default function CertificatesPage() {
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeader
             label="Achievements"
-            title="Certifications & Awards"
+            title="Certifications & Achievements"
             description="A complete list of my professional certifications, awards, and credentials."
           />
 
