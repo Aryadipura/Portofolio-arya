@@ -125,7 +125,6 @@ export const projects: Project[] = [
   {
     slug: "pos-system",
     title: "Point of Sales Application",
-    subtitle: "Frontend Development",
     description:
       "POS system with UI migration from Bootstrap to React.",
     category: "Frontend",
@@ -143,7 +142,6 @@ export const projects: Project[] = [
   {
     slug: "media-monitoring",
     title: "Media Monitoring Application",
-    subtitle: "Mobile Development",
     description:
       "Application for monitoring public opinion across industries.",
     category: "Mobile",
