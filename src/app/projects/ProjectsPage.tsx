@@ -38,8 +38,8 @@ export default function ProjectsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeader
             label="Portfolio"
-            title="Projects & Case Studies"
-            description="Each project tells a story of problem-solving, system design, and engineering trade-offs. Click any project to read the full case study."
+            title="Projects"
+            description="Check out some of my featured projects below."
           />
 
           {/* Search & Filter */}
@@ -76,11 +76,10 @@ export default function ProjectsPage() {
                 <motion.button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                    activeCategory === category
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${activeCategory === category
                       ? "bg-blue-600 dark:bg-blue-500 text-white shadow-md shadow-blue-500/25"
                       : "bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-800 hover:border-blue-300 dark:hover:border-blue-700"
-                  }`}
+                    }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
