@@ -106,6 +106,23 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "ship-recognition",
+    title: "Ship Recognition System",
+    description:
+      "System for identifying ship using AI for PT. LEN Industri (Persero).",
+    category: "Machine Learning",
+    tags: ["TensorFlow", "Computer Vision"],
+    techStack: ["TensorFlow", "Python", "Flask"],
+    thumbnail: "/projects/ship.jpg",
+    featured: true,
+    year: "2025",
+    highlights: [
+      "Developed AI model for ship recognition using YOLOv8.",
+      "Performed image processing and enhancement to increase accuracy.",
+      "Built backend with Python Flask and integrated with frontend.",
+    ],
+  },
+  {
     slug: "pos-system",
     title: "Point of Sales Application",
     subtitle: "Frontend Development",
