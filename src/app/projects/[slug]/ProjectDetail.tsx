@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 import { Project } from "@/lib/types";
 
@@ -124,7 +123,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
       {/* Case Study Content */}
       <section className="pb-24 md:pb-32">
         <div className="max-w-4xl mx-auto px-6 space-y-16">
-          {/* Implementation Highlights */}
+          {/* Feature Highlights */}
           <CaseStudySection title="Feature Highlights" icon="💡">
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {project.highlights.map((highlight, i) => (
@@ -145,6 +144,72 @@ export default function ProjectDetail({ project }: { project: Project }) {
               ))}
             </StaggerContainer>
           </CaseStudySection>
+
+          {/* Detail sections */}
+          {project.details && (
+            <>
+              {/* Project Overview */}
+              <CaseStudySection title="Project Overview" icon="📋">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800">
+                    <span className="text-lg">🏢</span>
+                    <div>
+                      <p className="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-0.5">Client</p>
+                      <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-200">{project.details.customer}</p>
+                    </div>
+                  </div>
+                  <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {project.details.projectDescription}
+                  </p>
+                </div>
+              </CaseStudySection>
+
+              {/* Technical Info */}
+              <CaseStudySection title="Technical Stack" icon="⚙️">
+                <div className="flex flex-wrap gap-3">
+                  {project.details.technicalInfo.map((info, i) => (
+                    <span key={i} className="px-4 py-2 text-sm font-mono rounded-lg bg-neutral-900 dark:bg-neutral-100 text-neutral-100 dark:text-neutral-900">
+                      {info}
+                    </span>
+                  ))}
+                </div>
+              </CaseStudySection>
+
+              {/* Job Description */}
+              <CaseStudySection title="My Role & Responsibilities" icon="👤">
+                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  {project.details.jobDescription}
+                </p>
+              </CaseStudySection>
+
+              {/* Challenges */}
+              <CaseStudySection title="Challenges" icon="⚡">
+                <div className="p-6 rounded-xl bg-amber-50/50 dark:bg-amber-950/10 border border-amber-200/40 dark:border-amber-800/20">
+                  <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {project.details.challenges}
+                  </p>
+                </div>
+              </CaseStudySection>
+
+              {/* Achievements */}
+              <CaseStudySection title="Achievements" icon="🏆">
+                <StaggerContainer className="space-y-3">
+                  {project.details.achievements.map((achievement, i) => (
+                    <StaggerItem key={i}>
+                      <div className="flex items-start gap-3 p-4 rounded-xl bg-green-50/50 dark:bg-green-950/10 border border-green-200/30 dark:border-green-800/20">
+                        <span className="mt-0.5 text-green-500 flex-shrink-0">
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                        </span>
+                        <p className="text-sm text-neutral-700 dark:text-neutral-300">{achievement}</p>
+                      </div>
+                    </StaggerItem>
+                  ))}
+                </StaggerContainer>
+              </CaseStudySection>
+            </>
+          )}
 
           {/* Navigation */}
           <FadeIn>

@@ -2,6 +2,15 @@
 // Portfolio Type Definitions
 // ============================================================
 
+export interface ProjectDetails {
+  customer: string;
+  projectDescription: string;
+  technicalInfo: string[];
+  jobDescription: string;
+  challenges: string;
+  achievements: string[];
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -11,10 +20,12 @@ export interface Project {
   tags: string[];
   techStack: string[];
   thumbnail: string;
+  logo?: string;
   featured: boolean;
   year: string;
   // Case study fields
   highlights: string[];
+  details?: ProjectDetails;
   links?: {
     github?: string;
     live?: string;

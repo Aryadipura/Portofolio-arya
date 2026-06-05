@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Project } from "@/lib/types";
 
@@ -33,16 +34,34 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           {/* Thumbnail area */}
           <div className="relative h-48 bg-gradient-to-br from-blue-50 to-violet-50 dark:from-blue-950/30 dark:to-violet-950/30 overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-4xl font-bold bg-gradient-to-br from-blue-500/20 to-violet-500/20 dark:from-blue-400/20 dark:to-violet-400/20 w-20 h-20 rounded-2xl flex items-center justify-center text-blue-600/40 dark:text-blue-400/40">
-                {project.title.charAt(0)}
-              </div>
+              {project.logo ? (
+                <div className="w-24 h-24 rounded-2xl bg-white dark:bg-neutral-800 shadow-sm flex items-center justify-center p-3 border border-neutral-100 dark:border-neutral-700">
+                  <Image
+                    src={project.logo}
+                    alt={`${project.title} logo`}
+                    width={80}
+                    height={80}
+                    className="object-contain w-full h-full"
+                    onError={(e) => {
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.style.display = "none";
+                    }}
+                  />
+                </div>
+              ) : (
+                <div className="text-4xl font-bold bg-gradient-to-br from-blue-500/20 to-violet-500/20 dark:from-blue-400/20 dark:to-violet-400/20 w-20 h-20 rounded-2xl flex items-center justify-center text-blue-600/40 dark:text-blue-400/40">
+                  {project.title.charAt(0)}
+                </div>
+              )}
             </div>
+
             {/* Category badge */}
             <div className="absolute top-3 right-3">
               <span className="px-3 py-1 text-xs font-medium rounded-full bg-white/90 dark:bg-neutral-900/90 text-neutral-700 dark:text-neutral-300 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50">
                 {project.category}
               </span>
             </div>
+
             {/* Year */}
             <div className="absolute top-3 left-3">
               <span className="px-2 py-1 text-xs font-mono text-neutral-500 dark:text-neutral-400">

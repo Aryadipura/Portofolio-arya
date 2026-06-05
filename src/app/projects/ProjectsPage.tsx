@@ -13,24 +13,27 @@ export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
-      const matchesCategory =
-        activeCategory === "All" || project.category === activeCategory;
-      const matchesSearch =
-        searchQuery === "" ||
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.description
-          .toLowerCase()
-          .includes(searchQuery.toLowerCase()) ||
-        project.techStack.some((tech) =>
-          tech.toLowerCase().includes(searchQuery.toLowerCase())
-        ) ||
-        project.tags.some((tag) =>
-          tag.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-      return matchesCategory && matchesSearch;
-    });
+    return projects
+      .filter((project) => {
+        const matchesCategory =
+          activeCategory === "All" || project.category === activeCategory;
+        const matchesSearch =
+          searchQuery === "" ||
+          project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          project.description
+            .toLowerCase()
+            .includes(searchQuery.toLowerCase()) ||
+          project.techStack.some((tech) =>
+            tech.toLowerCase().includes(searchQuery.toLowerCase())
+          ) ||
+          project.tags.some((tag) =>
+            tag.toLowerCase().includes(searchQuery.toLowerCase())
+          );
+        return matchesCategory && matchesSearch;
+      })
+      .sort((a, b) => parseInt(b.year) - parseInt(a.year));
   }, [activeCategory, searchQuery]);
+
 
   return (
     <div className="relative">
@@ -77,8 +80,8 @@ export default function ProjectsPage() {
                   key={category}
                   onClick={() => setActiveCategory(category)}
                   className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${activeCategory === category
-                      ? "bg-blue-600 dark:bg-blue-500 text-white shadow-md shadow-blue-500/25"
-                      : "bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-800 hover:border-blue-300 dark:hover:border-blue-700"
+                    ? "bg-blue-600 dark:bg-blue-500 text-white shadow-md shadow-blue-500/25"
+                    : "bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-800 hover:border-blue-300 dark:hover:border-blue-700"
                     }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
