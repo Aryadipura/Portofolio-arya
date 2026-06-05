@@ -498,13 +498,13 @@ export const educationRecords: Education[] = [
     institution: "SMA Negeri 9 Bandung",
     degree: "IPA / Science",
     duration: "2017 - 2020",
-    description: "Lulus dengan mendapat ranking umum 22 dari total 360 siswa."
+    description: "Graduated with an overall rank of 22nd out of 360 students."
   },
   {
     institution: "Politeknik Negeri Bandung",
     degree: "D4 Teknik Informatika / Applied Bachelors Degree in Informatics Engineering",
     duration: "2020 - 2024",
-    description: "Lulus dengan gelar S.Tr.Kom. dengan IPK 3.19 / 4.00."
+    description: "Graduated with a Bachelor's degree (S.Tr.Kom.) with a GPA of 3.19 / 4.00."
   },
 ];
 
@@ -513,7 +513,7 @@ export const organizationRecords: Organization[] = [
     name: "HIMAKOM POLBAN",
     role: "Ketua Angkatan JTK20 / Head of Cohort JTK20",
     duration: "2021 - 2023",
-    description: "Bertanggung jawab atas koordinasi dan komunikasi antara mahasiswa angkatan JTK20 dengan HIMAKOM dan BEM KEMA POLBAN"
+    description: "Responsible for coordination and communication between the JTK20 student cohort, HIMAKOM, and BEM KEMA POLBAN."
   }
 ];
 
