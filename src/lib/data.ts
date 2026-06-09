@@ -94,7 +94,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript"],
     techStack: ["Next.js", "TypeScript"],
     thumbnail: "/projects/los.jpg",
-    logo: "/ist.jpg",
+    logo: "/smi.jpg",
     featured: true,
     year: "2025",
     highlights: [
@@ -106,7 +106,7 @@ export const projects: Project[] = [
       "Guided team on GitLab collaboration workflow and merge conflict resolution",
     ],
     details: {
-      customer: "PT Infosys Solusi Terpadu (IST)",
+      customer: "PT Sarana Multi Infrastruktur (Persero)",
       projectDescription:
         "A Loan Origination System (LOS) is a platform used to handle the full process of loan or financing applications, starting from the initial submission up to the final disbursement. This system enables banks and financial institutions to work more efficiently and faster by automating workflows, enhancing data accuracy, and offering complete visibility across the entire loan lifecycle.",
       technicalInfo: ["FE: NextJS (Typescript) 14"],
